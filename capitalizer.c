@@ -8,11 +8,11 @@
 
 
 int main(int argc, char *argv[]) {
-FILE *fp;
+FILE *file;
 char string[255];
-fp = fopen(argv[1], "r+");
-long pos = ftell(fp);
-while(fgets(string, 255, fp) != NULL) {
+file = fopen(argv[1], "r+");
+long pos = ftell(file);
+while(fgets(string, 255, file) != NULL) {
 	int i;
 	int numWord = 1;
 	int size = strlen(string);
@@ -25,11 +25,11 @@ while(fgets(string, 255, fp) != NULL) {
 			numWord++;
 		}
 	}
-	fseek(fp, pos, SEEK_SET);
-	fprintf(fp, "%s", string);
-	fflush(fp);
-	pos = ftell(fp);
+	fseek(file, pos, SEEK_SET);
+	fprintf(file, "%s", string);
+	fflush(file);
+	pos = ftell(file);
 }
-fclose(fp);
+fclose(file);
 return 0;
 }
