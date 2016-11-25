@@ -7,11 +7,16 @@
 #include<ctype.h>
 
 
-int main(int argc, char *argv[]) {
+int main( int argc, char *argv[]) {
 FILE *file;
 char string[255];
 file = fopen(argv[1], "r+");
-long pos = ftell(file);
+long pos = ftell(file); 
+	
+if (file == NULL) {
+    fprintf(stderr, "Fail to open poem.txt\n");
+    exit(EXIT_FAILURE);
+}
 while(fgets(string, 255, file) != NULL) {
 	int i;
 	int numWord = 1;
