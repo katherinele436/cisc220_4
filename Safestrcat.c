@@ -16,5 +16,6 @@ char* safestrcat(char *a, char *b) {
   fgets(*b, 100, stdin);     // sets character limit to 100
   printf("Enter another string: ");
   scanf("%[^\n]s",*b);
+  
   return strcat(char *a, char *b);
 }
