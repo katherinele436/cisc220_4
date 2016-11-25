@@ -15,9 +15,9 @@ long pos = ftell(fp);
 while(fgets(string, 255, fp) != NULL) {
 	int i;
 	int numWord = 1;
-	int len = strlen(string);
+	int size = strlen(string);
 	string[0] = toupper(string[0]);
-	for (i=1 ; i < len ; i++) {
+	for (i=1 ; i < size ; i++) {
 		if (isalpha(string[i]) && string[i-1] == ' '){
 			if ((numWord % 2) == 0) {
 			string[i] = toupper(string[i]);
